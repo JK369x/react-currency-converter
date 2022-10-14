@@ -3,7 +3,7 @@ import "./CurrencyComponent.css";
 
 
 export const CurrencyComponent = (props) => {
-  const {currencyChoice,selectCurrency,changeCurrency,InputAmount} = props;
+  const {currencyChoice,selectCurrency,changeCurrency,InputAmount,amount,onChangeAmount} = props;
   return (
     <div className="currency">
     <select value={selectCurrency} onChange={changeCurrency}>
@@ -11,7 +11,7 @@ export const CurrencyComponent = (props) => {
             <option key={choice} value={choice}>{choice}</option>
         )}
     </select>
-    <input type="number" value={InputAmount}/>
+    <input type="number" value={amount} onChange={onChangeAmount} />
     </div>
   );
 };
